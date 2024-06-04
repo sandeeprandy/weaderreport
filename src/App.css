@@ -1,0 +1,51 @@
+.App {
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  height: 100vh;
+  background-color: rgb(226, 226, 190);
+  padding: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.searchCountys {
+  margin: 10px;
+  padding: 35px;
+  text-align: center;
+  background-color: rgb(204, 240, 240);
+  border-radius: 15px;
+  font-size: medium;
+}
+
+.input {
+  width: 200px;
+}
+
+.button {
+  margin: 5px;
+}
+
+.weatherReport {
+  background-color: rgb(223, 189, 210);
+  width: 500px;
+  text-align: start;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+@media (max-width: 600px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    font-size: small;
+  }
+
+  .weatherReport {
+    width: 270px;
+    font-size: small;
+  }
+ 
+}
