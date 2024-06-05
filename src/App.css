@@ -1,21 +1,31 @@
+.header{
+  background-color: rgb(58, 47, 47);
+  color: white;
+  text-align: center;
+  width: 100%;
+}
 .App {
+  padding: 25px;
   display: flex;
-  justify-content: center;
-  /* Center horizontally */
-  align-items: center;
-  /* Center vertically */
+  flex-direction: row;
+
   height: 100vh;
-  background-color: rgb(226, 226, 190);
-  padding: 10px;
+
+  background-color:white;
+
+  padding: 20px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .searchCountys {
-  margin: 10px;
-  padding: 35px;
-  text-align: center;
-  background-color: rgb(204, 240, 240);
-  border-radius: 15px;
+ 
+  padding: 20px;
+
+  background-color: rgb(238, 227, 227);
+  box-shadow: 4px 3px 6px rgba(252, 69, 69, 0.15) ;
+
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   font-size: medium;
 }
 
@@ -28,11 +38,69 @@
 }
 
 .weatherReport {
-  background-color: rgb(223, 189, 210);
-  width: 500px;
-  text-align: start;
+  background-color:white;
+  width: 400px;
+  text-align: center;
   padding: 5px;
   border-radius: 15px;
+  padding: 10px;
+  margin-top: 10px;
+  box-shadow: 0 3px 6px rgba(247, 2, 165, 0.15);
+}
+.cloudy {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.humadity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  box-shadow: 0 3px 6px rgba(46, 42, 45, 0.15);
+}
+
+.city {
+  text-align: center;
+}
+
+.chart {
+  width: 60%;
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(238, 227, 227);
+
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-size: medium;
+ 
+}
+.charts{
+  width: 100%; 
+  margin-top: 10px; 
+  box-shadow: 0 3px 6px rgba(247, 2, 165, 0.15) ;
+ 
+}
+
+.humadityItems {
+  background-color: rgb(162, 222, 240);
+  padding: 5px;
+  height: 50px;
+  width: 100px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(247, 2, 165, 0.15);
+}
+.moreweader{
+  background-color: white;
+  width: 95%;
+  text-align: center;
+  padding: 5px;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 10px;
+  box-shadow: 0 3px 6px rgba(247, 2, 165, 0.15);
+ 
+
 }
 
 @media (max-width: 600px) {
@@ -40,12 +108,32 @@
     display: flex;
     flex-direction: column;
     padding: 15px;
-    font-size: small;
+    font-size: xx-small;
+    width: 100%;
+    height: 100%;
+
   }
 
   .weatherReport {
-    width: 270px;
+    
     font-size: small;
+    width: 80%;
   }
- 
+  .searchCountys{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    font-size: small;
+    width: 80%;
+    border-radius: 5px;
+
+  }
+  .chart {
+    width: 78%;
+    border-radius: 5px;
+  }
+  .header{
+    width: 105%;
+
+  }
 }
