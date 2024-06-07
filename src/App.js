@@ -10,19 +10,22 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-} from "recharts";
+} from "recharts"; 
+import { DNA ,TailSpin} from 'react-loader-spinner';
 
 import "./App.css";
 
 function App() {
   const [city, setCountry] = useState("");
   const [cityWaeder, setCityWaeder] = useState(null);
+  const [loading , setLoading]=useState(false)
   const [data, setadata] = useState([{ time: 5, temperature: 25 }]);
   const date = new Date().toLocaleDateString();
   const times = new Date().toLocaleTimeString();
 
   //fetch the data & get weather report based on city
   const fetchcity = async () => {
+   
     try {
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=23da13304a0096bcdf900edc15a66563`
@@ -33,6 +36,8 @@ function App() {
       newdata[0].temperature = cityWaeder.main.temp;
       newdata[0].time =times
       setadata(newdata);
+      setLoading(true)
+     
       console.log(times[0]);
     } catch (error) {
       console.error("we got an error", error); //handles the exceptions
@@ -57,7 +62,7 @@ function App() {
       <div className="App">
         <div className="searchCountys">
           <div className="weatherReport">
-            {cityWaeder ? (
+            {loading ? (
               <>
                 <p>today date : {date}</p>
                 <h1>city name : {cityWaeder.name} </h1>
@@ -84,15 +89,24 @@ function App() {
                 </div>
               </>
             ) : (
-             <></>
+              <div className="dna-wrapper">
+          <DNA
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="dna-loading"
+            wrapperStyle={{}}
+            wrapperClass="dna-wrapper"
+          />
+        </div>
             )}
           </div>
         </div>
         <div className="chart">
-          {cityWaeder ? (
+          {loading ? (
             <>
               <Card
-                title={`temperature of ${cityWaeder.name}`}
+                title={`temperature graph of ${cityWaeder.name}`}
                 className="charts"
                
               >
@@ -134,7 +148,16 @@ function App() {
               </div>
             </>
           ) : (
-            <h1> </h1>
+          <div>  <TailSpin   
+          height="80"
+          width="80"
+          color="#4fa94d"
+          ariaLabel="tail-spin-loading"
+          radius="1"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+      /> </div>
           )}
         </div>
       </div>
